@@ -1,44 +1,53 @@
-*{
-    margin:0px;
-    padding:0px;
-    color:#fff;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+
+* {
+	box-sizing: border-box;
 }
-html,body{
-    height:100%;
-    width:100%;
-    background-color:aquamarine;
+
+body {
+	font-family: Montserrat, sans-serif;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: rgb(9, 14, 23);
+	color: #ffffff;
 }
-#main{
-    height:100%;
-    width:100%;
-    background-color:#111;
-    position:relative;
+
+svg {
+	opacity: 0;
+	position: absolute;
 }
-.elem{
-    height:150px;
-    width:100%;
-    border-bottom:3px solid #fff;
-    display:flex;
-    align-items:center;
-    justify-content:flex start;
-    position:relative;
+
+.wrapper {
+	position: relative;
 }
-.elem h1{
-    font-size:6vw;
-    /* font-weight: 900; */
-    /* position:relative; */
-    z-index:6;
-    /* mix-blend-mode:difference; */
+
+.hero {
+	min-height: 100vh;
+	padding: clamp(1rem, 2vw, 5rem);
+	display: flex;
+	align-items: center;
 }
-.elem img{
-    height:150px;
-    width:150px;
-    object-fit:cover;
-    object-position:center;
-    border-radius:50%;
-    position:absolute;
-    /* transform:translate(-50%,-50%); */
-    /* z-index:-1; */
-    /* opacity:0;
-    transition:all linear 0.3s; */
+
+.hero--secondary {
+	--mask: radial-gradient(circle at var(--x, 70%) var(--y, 50%), black 25%, transparent 0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, #482EF4, #5FF4C2, #ffffff);
+	color: rgb(9, 14, 23);
+	-webkit-mask-image: var(--mask);
+	mask-image: var(--mask);
 }
+
+.hero__heading {
+	font-size: clamp(2rem, 5vw, 8rem);
+	text-transform: uppercase;
+	margin: 0;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
